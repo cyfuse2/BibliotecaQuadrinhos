@@ -1,0 +1,254 @@
+.comic-detail-container {
+  min-height: 100vh;
+  background: url('../../assets/heroes1.png') no-repeat center center fixed;
+  background-size: cover;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.comic-detail-content {
+  max-width: 1200px;
+  width: 95%;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .comic-detail-content {
+    padding: 1rem;
+  }
+}
+
+.comic-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+@media (max-width: 768px) {
+  .comic-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .comic-detail-grid {
+    padding: 1rem;
+    gap: 1rem;
+  }
+}
+
+.comic-detail-image img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.comic-detail-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.comic-detail-info h1 {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.comic-detail-info .author {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.comic-detail-info .price {
+  font-size: clamp(1.3rem, 4vw, 2rem);
+  font-weight: bold;
+  color: #2c3e50;
+  margin: 1rem 0;
+}
+
+.comic-detail-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.comic-detail-actions button {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 480px) {
+  .comic-detail-actions button {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+.rent-btn {
+  background-color: #3498db;
+  color: white;
+}
+
+.rent-btn:hover {
+  background-color: #2980b9;
+}
+
+.reserve-btn {
+  background-color: #f1c40f;
+  color: #333;
+}
+
+.reserve-btn:hover {
+  background-color: #f39c12;
+}
+
+.back-btn {
+  background-color: #95a5a6;
+  color: white;
+}
+
+.back-btn:hover {
+  background-color: #7f8c8d;
+}
+
+@media (max-width: 768px) {
+  .comic-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .comic-detail-image {
+    text-align: center;
+  }
+
+  .comic-detail-image img {
+    max-width: 300px;
+  }
+
+  .comic-detail-actions {
+    flex-direction: column;
+  }
+
+  .comic-detail-actions button {
+    width: 100%;
+  }
+}
+
+.recommendations-section {
+  margin-top: 3rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+.recommendations-section h2 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.recommendations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.recommendation-card {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid transparent;
+}
+
+.recommendation-card::before {
+  content: 'Clique para ver mais';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.recommendation-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-color: #3498db;
+}
+
+.recommendation-card:hover::before {
+  opacity: 1;
+}
+
+.recommendation-card img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.recommendation-card h3 {
+  font-size: 1.1rem;
+  color: #2c3e50;
+  margin: 0.5rem 0;
+}
+
+.recommendation-card p {
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+.publisher {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .recommendations-section {
+    padding: 1.5rem;
+  }
+
+  .recommendations-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .recommendation-card img {
+    max-width: 150px;
+  }
+}
