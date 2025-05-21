@@ -14,6 +14,11 @@ const MyRentals = () => {
   const rentedComics = JSON.parse(localStorage.getItem('rentedComics')) || [];
   const purchasedComics = JSON.parse(localStorage.getItem('purchasedComics')) || [];
 
+  const handleLogout = () => {
+    localStorage.clear(); // Limpa todos os dados do localStorage
+    window.location.href = '/'; // Redireciona para a página de login
+  };
+
   const handlePurchase = (comic) => {
     // Remover o quadrinho da lista de reservados
     const updatedRentedComics = rentedComics.filter(c => c.id !== comic.id);
@@ -123,7 +128,7 @@ const MyRentals = () => {
 
   return (
     <div className="my-rentals-container">
-      <Navbar />
+      <Navbar onLogout={handleLogout} />
       <div className="my-rentals-content">
         <h1>Meu Carrinho</h1>
         

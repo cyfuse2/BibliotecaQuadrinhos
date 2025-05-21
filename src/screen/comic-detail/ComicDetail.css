@@ -4,6 +4,7 @@
   background-size: cover;
   width: 100%;
   overflow-x: hidden;
+  margin-top: 70px;
 }
 
 .comic-detail-content {

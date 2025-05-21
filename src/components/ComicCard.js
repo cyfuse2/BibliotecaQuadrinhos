@@ -22,6 +22,8 @@ const ComicCard = ({ comic }) => {
     const comicWithDate = { ...comic, date: new Date().toLocaleDateString() };
     purchasedComics.push(comicWithDate);
     localStorage.setItem('purchasedComics', JSON.stringify(purchasedComics));
+    // Disparar evento de storage para atualizar o contador
+    window.dispatchEvent(new Event('storage'));
     alert(`Quadrinho "${comic.title}" comprado com sucesso!`);
   };
 
@@ -31,6 +33,8 @@ const ComicCard = ({ comic }) => {
     const comicWithDate = { ...comic, date: new Date().toLocaleDateString() };
     rentedComics.push(comicWithDate);
     localStorage.setItem('rentedComics', JSON.stringify(rentedComics));
+    // Disparar evento de storage para atualizar o contador
+    window.dispatchEvent(new Event('storage'));
     alert(`Quadrinho "${comic.title}" reservado com sucesso!`);
   };
 
